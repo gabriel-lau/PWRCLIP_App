@@ -2,24 +2,19 @@ package com.example.pwrclipapp.ui.home;
 
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pwrclipapp.R
 import com.google.android.material.card.MaterialCardView
-import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-
-
-
-
-public class AppliancesAdapter(private val dataSet: List<AppliancesViewModel>, private val onNoteListener: OnNoteListener) : RecyclerView.Adapter<AppliancesAdapter.ViewHolder>() {
+public class AppliancesAdapter(private val dataSet: ArrayList<AppliancesViewModel>, private val onNoteListener: OnNoteListener) : RecyclerView.Adapter<AppliancesAdapter.ViewHolder>(){
     interface OnNoteListener {
         fun onNoteClick(position: Int)
     }
-    inner class ViewHolder(view : View) : RecyclerView.ViewHolder(view), View.OnClickListener {
+    inner class ViewHolder(view : View) : RecyclerView.ViewHolder(view), View.OnClickListener, View.OnLongClickListener {
         val textViewName: TextView
         val textViewStatus: TextView
         val textViewUsage: TextView
@@ -34,10 +29,29 @@ public class AppliancesAdapter(private val dataSet: List<AppliancesViewModel>, p
             imageViewImage = view.findViewById(R.id.imageView_Image)
             cardViewAppliance = view.findViewById(R.id.cardView_Appliance)
             cardViewAppliance.setOnClickListener(this)
+            cardViewAppliance.setOnLongClickListener(this)
         }
         override fun onClick(v: View?) {
             onNoteListener.onNoteClick(adapterPosition)
         }
+
+        override fun onLongClick(v: View?): Boolean {
+            if (v != null) {
+                MaterialAlertDialogBuilder(v.rootView.context)
+                    .setTitle("Delete row")
+                    .setMessage("Are you sure you want to delete this row?")
+                    .setNegativeButton("Yes") { dialog, which ->
+                        dataSet.removeAt(position)
+                        notifyItemRemoved(position);
+                    }
+                    .setPositiveButton("No") { dialog, which ->
+
+                    }
+                    .show()
+            }
+            return true
+        }
+
     }
 
     // Create new views (invoked by the layout manager)

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment"
     android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-    android:layout_marginVertical="@dimen/activity_vertical_margin">
+    android:layout_marginTop="@dimen/activity_vertical_margin">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -25,7 +25,7 @@
             android:id="@+id/textView_Welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hi Gabriel,"
+            android:text="Hi Caleb,"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
             android:layout_marginVertical="@dimen/activity_vertical_margin"/>
         <LinearLayout
@@ -44,7 +44,7 @@
                 android:id="@+id/materialTextView_TotalWattage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1000W"
+                android:text="20kWh"
                 android:textColor="@color/md_theme_dark_primary"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:typeface="monospace"
@@ -55,8 +55,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_home"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_below="@+id/linearLayout_Message"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>

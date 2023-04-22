@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.add.AddWIFIFragment"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+    android:layout_marginVertical="@dimen/activity_vertical_margin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add a new device"
+                android:layout_marginVertical="@dimen/activity_vertical_margin"
+                android:textAppearance="@style/TextAppearance.M3.Sys.Typescale.HeadlineMedium"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:layout_marginVertical="@dimen/activity_vertical_margin">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textField_Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Device ID"
+                android:layout_marginBottom="@dimen/activity_vertical_margin">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textField_DeviceID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Select an icon for the device"
+                android:textAppearance="@style/TextAppearance.M3.Sys.Typescale.BodyLarge"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <Button
+                        android:id="@+id/button_TV"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        app:icon="@drawable/tv_48px"
+                        app:iconSize="50dp"/>
+                    <Button
+                        android:id="@+id/button_PC"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        app:icon="@drawable/computer_48px"
+                        app:iconSize="50dp"/>
+                    <Button
+                        android:id="@+id/button_Fan"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        app:icon="@drawable/mode_fan_48px"
+                        app:iconSize="50dp"/>
+                    <Button
+                        android:id="@+id/button_AC"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        app:icon="@drawable/ac_unit_48px"
+                        app:iconSize="50dp"/>
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/button_Fridge"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    app:icon="@drawable/fridge_48px"
+                    app:iconSize="50dp"/>
+                <Button
+                    android:id="@+id/button_Microwave"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    app:icon="@drawable/microwave_48px"
+                    app:iconSize="50dp"/>
+                <Button
+                    android:id="@+id/button_Oven"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    app:icon="@drawable/oven_48px"
+                    app:iconSize="50dp"/>
+                <Button
+                    android:id="@+id/button_Light"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    app:icon="@drawable/light_48px"
+                    app:iconSize="50dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/activity_vertical_margin"
+                android:orientation="horizontal"
+                android:gravity="end">
+                <Button
+                    android:id="@+id/button_Add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fab_add"
+                    app:icon="@drawable/add_48px" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

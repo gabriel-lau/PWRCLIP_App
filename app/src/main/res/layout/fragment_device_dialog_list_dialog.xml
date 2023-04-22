@@ -28,54 +28,100 @@
             android:gravity="center">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginVertical="@dimen/activity_vertical_margin"
                 style="?attr/materialCardViewFilledStyle">
                 <ImageView
+                    android:id="@+id/imageView_Image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="7dp"
                     android:src="@drawable/fridge_48px"/>
             </com.google.android.material.card.MaterialCardView>
 
 
             <TextView
+                android:id="@+id/textView_Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Device name"/>
+                android:text="Device name"
+                android:textAppearance="@style/TextAppearance.M3.Sys.Typescale.HeadlineMedium"/>
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TableRow>
-                    <TextView
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/activity_vertical_margin">
+                <TableRow
+                    android:layout_marginVertical="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
                         android:layout_weight="1"
-                        android:layout_column="1"
-                        android:text="Online since"
-                        android:gravity="center"/>
-                    <TextView
+                        android:layout_column="1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Online since"
+                            android:gravity="center"
+                            android:textAppearance="@style/TextAppearance.M3.Sys.Typescale.BodyMedium"/>
+                        <TextView
+                            android:id="@+id/textView_OnlineSince"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@color/md_theme_dark_primary"
+                            android:gravity="center"
+                            android:textAppearance="@style/TextAppearance.M3.Sys.Typescale.TitleMedium"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
                         android:layout_weight="1"
-                        android:layout_column="2"
-                        android:text="Last ping"
-                        android:gravity="center"/>
+                        android:layout_column="2">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Last message"
+                            android:gravity="center"
+                            android:textAppearance="@style/TextAppearance.M3.Sys.Typescale.BodyMedium"/>
+                        <TextView
+                            android:id="@+id/textView_LastPing"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@color/md_theme_dark_primary"
+                            android:gravity="center"
+                            android:textAppearance="@style/TextAppearance.M3.Sys.Typescale.TitleMedium"/>
+                    </LinearLayout>
                 </TableRow>
-                <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
                     <TextView
-                        android:layout_weight="1"
-                        android:layout_column="1"
-                        android:text="Time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Current usage"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.M3.Sys.Typescale.BodyMedium"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView_CurrentUsage"
+                        android:text="-"
                         android:textColor="@color/md_theme_dark_primary"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.M3.Sys.Typescale.TitleMedium"/>
 
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_weight="1"
-                        android:layout_column="2"
-                        android:text="Time"
-                        android:textColor="@color/md_theme_dark_primary"
-                        android:gravity="center"/>
-                </TableRow>
+                </LinearLayout>
+
             </TableLayout>
 
             <com.jjoe64.graphview.GraphView
+                android:id="@+id/graphView_Usage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 

@@ -27,5 +27,10 @@
         android:name="com.example.pwrclipapp.ui.home.DeviceFragment"
         android:label="fragment_device"
         tools:layout="@layout/fragment_device" />
+    <fragment
+        android:id="@+id/navigation_add_wifi"
+        android:name="com.example.pwrclipapp.ui.add.AddWIFIFragment"
+        android:label="fragment_add_w_i_f_i"
+        tools:layout="@layout/fragment_add_w_i_f_i" />
 
 </navigation>
